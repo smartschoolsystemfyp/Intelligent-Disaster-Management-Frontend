@@ -8,7 +8,7 @@ const ServiceContext = createContext();
 const ServiceProvider = ({ children }) => {
   // Configurations
   const navigate = useNavigate();
-  const URL = "http://localhost:3000/api";
+  const URL = import.meta.env.VITE_URL;
   const token = localStorage.getItem("token") || null;
   const resolver = {
     headers: {
