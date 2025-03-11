@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar,
+#overflow::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes modal-appearance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#modal {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: modal-appearance 0.3s ease-out forwards;
+}
+
+.modal {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: modal-appearance 0.3s ease-out forwards;
+}
