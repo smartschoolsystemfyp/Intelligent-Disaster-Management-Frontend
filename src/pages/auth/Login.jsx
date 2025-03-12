@@ -2,7 +2,7 @@ import { useState } from "react";
 import { GiEarthAmerica } from "react-icons/gi";
 import { HiMail, HiLockClosed } from "react-icons/hi";
 import { useService } from "../../context/service";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Login = () => {
   const { loading, signIn } = useService();
@@ -14,6 +14,10 @@ const Login = () => {
 
     await signIn({ email, password });
   };
+
+  const token = localStorage.getItem("token") || null;
+
+  if (token) return <Navigate to={"/dms/"} />;
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-[50]">

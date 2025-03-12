@@ -28,8 +28,6 @@ const ProtectedRoute = () => {
 };
 
 const App = () => {
-  const { loading } = useService();
-
   return (
     <>
       <Toaster />
