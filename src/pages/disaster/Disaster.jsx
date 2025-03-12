@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useService } from "../../context/service";
+import Loader from "../../components/Loader";
 
 const Disaster = () => {
   const {
+    loading,
     disasters,
     getDisasters,
     deleteDisaster,
@@ -85,6 +87,7 @@ const Disaster = () => {
 
   return (
     <div className="p-6 text-[0.828rem]">
+      {loading && <Loader />}
       <div id="modal" className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Disasters</h2>
         <button

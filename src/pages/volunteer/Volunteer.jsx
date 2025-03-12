@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useService } from "../../context/service";
 import { AiOutlineFileDone } from "react-icons/ai";
+import Loader from "../../components/Loader";
 
 const Volunteer = () => {
   const {
+    loading,
     disasters,
     volunteers,
     getVolunteers,
@@ -82,6 +84,7 @@ const Volunteer = () => {
 
   return (
     <div className="p-6 text-[0.828rem]">
+      {loading && <Loader />}
       <div id="modal" className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Volunteers</h2>
         <button

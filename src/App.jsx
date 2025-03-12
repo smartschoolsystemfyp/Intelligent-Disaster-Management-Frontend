@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { Toaster } from "react-hot-toast";
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { useService } from "./context/service";
+import Loader from "./components/Loader";
 
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
@@ -26,10 +28,12 @@ const ProtectedRoute = () => {
 };
 
 const App = () => {
+  const { loading } = useService();
+
   return (
     <>
       <Toaster />
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Login />} />
@@ -44,8 +48,8 @@ const App = () => {
               <Route path="disaster" element={<Disaster />} />
               <Route path="donations" element={<Donation />} />
               <Route path="resources" element={<Resource />} />
-              <Route path="settings" element={<Setting />} />
               <Route path="weather" element={<Weather />} />
+              <Route path="settings" element={<Setting />} />
               <Route path="*" element={<Navigate to="/dms/" />} />
             </Route>
           </Route>

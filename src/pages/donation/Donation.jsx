@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import { useService } from "../../context/service";
+import Loader from "../../components/Loader";
 
 const Donation = () => {
   const {
+    loading,
     disasters,
     donations,
     getDonations,
@@ -105,6 +107,7 @@ const Donation = () => {
 
   return (
     <div className="p-6 text-[0.828rem]">
+      {loading && <Loader />}
       <div id="modal" className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Donations</h2>
         <button
