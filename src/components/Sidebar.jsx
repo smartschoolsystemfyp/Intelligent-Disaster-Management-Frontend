@@ -103,8 +103,8 @@ const Sidebar = () => {
               <img className="w-full h-full" src="/profile.png" alt="" />
             </div>
             <div className="text-gray-200 hidden sm:block">
-              <p className="text-sm font-semibold">{loggedInUser.name}</p>
-              <p className="text-xs">{loggedInUser.email}</p>
+              <p className="text-sm font-semibold">{loggedInUser?.name}</p>
+              <p className="text-xs">{loggedInUser?.email}</p>
             </div>
           </div>
         </div>
