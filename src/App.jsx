@@ -3,6 +3,7 @@ import { Toaster } from "react-hot-toast";
 import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { useService } from "./context/service";
 import Loader from "./components/Loader";
+import LandingPage from "./pages/landing/LandingPage";
 
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
@@ -34,7 +35,8 @@ const App = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/stripe" element={<Stripe />} />
 
