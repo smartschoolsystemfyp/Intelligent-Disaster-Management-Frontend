@@ -123,9 +123,11 @@ const LandingPage = () => {
               Connecting communities, resources, and responders to mitigate
               disasters and save lives.
             </p>
-            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md text-lg font-medium flex items-center">
-              Get Involved <FaArrowRight className="ml-2" />
-            </button>
+            <a href="#volunteer">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md text-lg font-medium flex items-center">
+                Get Involved <FaArrowRight className="ml-2" />
+              </button>
+            </a>
           </div>
         </div>
       </section>
